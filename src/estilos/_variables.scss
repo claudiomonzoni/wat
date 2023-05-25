@@ -1,0 +1,60 @@
+$cafe: #743922;
+$azul: #9DC3E6;
+$dorado: #B39B6E;
+$azul-claro: #5C728F;
+$fondo: #E3EEF8;
+$negro: #161616;
+// fuente monserrat y roboto para los head
+
+//media query
+$cel: 479px;
+$nocel: 479px;
+$tableta: 768px;
+$tableta-land: 1024px;
+$hd: 1600px;
+$hdplus: 1990px;
+
+@mixin cel {
+  @media (max-width: #{$cel}) {
+    @content;
+  }
+}
+
+@mixin nocel {
+  @media (min-width: #{$nocel}) {
+    @content;
+  }
+}
+
+@mixin tableta_land {
+  @media (min-width: #{$tableta-land}) and (max-width: #{$hd - 1px}) {
+    @content;
+  }
+}
+
+@mixin tableta {
+  @media (min-width: #{$tableta - 1px}) and (max-width: #{$tableta-land - 1px}) {
+    @content;
+  }
+}
+
+@mixin hd {
+  @media (min-width: #{$hd}) and (max-width: #{$hdplus}) {
+    @content;
+  }
+}
+
+@mixin hdplus {
+  @media (min-width: #{$hdplus}) {
+    @content;
+  }
+}
+
+.anime {
+  transition: all 0.5s ease-in-out;
+}
+
+//extra
+$margen: 2rem;
+$margen-abajo: 4rem;
+$margen-riel: calc((100% - (100% - 5rem)) / 2 );

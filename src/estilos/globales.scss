@@ -1,0 +1,110 @@
+@use "_variables" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Poppins:wght@300;400;700;900&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-size: clamp(14px, 1.5vw, 24px);
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  body {
+    position: relative;
+  }
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ol,
+  ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    line-height: 1em;
+    font-family: 'Poppins', sans-serif;
+  }
+  h1 {
+    font-size: clamp(3em, 5vw, 90vw);
+    padding-bottom: 1rem;
+  }
+  h2 {
+    font-size: clamp(2em, 3vw, 60vw);
+    font-weight: bold;
+    color: $verde;
+    padding-bottom: 1rem;
+  }
+  h3 {
+    font-size: clamp(1.3em, 1.5vw, 20vw);
+    font-weight: bold;
+  }
+  
+  ol,
+  ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  a {
+    text-decoration: none;
+    display: inline-block;
+    color: $negro;
+    @extend .anime;
+    &:hover {
+      transform: scale(1.1);
+      color: $naranja;
+      @include cel{
+        transform: scale(1);
+        transform: none;
+      }
+    }
+  }
+  
+  .selected {
+    color: $naranja;
+    transform: scale(1.1);
+  }
+  
+  .bandeja {
+    width: min(100% - 5rem, 60rem);
+    margin-inline: auto;
+  
+    @include hd {
+      width: min(100% - 5rem, 70rem);
+    }
+  
+    @include hdplus {
+      width: min(100% - 5rem, 90rem);
+    }
+  }
+  
+  .cta {
+    border: none;
+    background: $naranja;
+    border-radius: 0.5rem;
+    padding: 0.3rem 1rem;
+    font-weight: bold;
+    color: #fff;
+    &:hover {
+      background: #fff;
+      color: $naranja;
+    }
+  }
+  

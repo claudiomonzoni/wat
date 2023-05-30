@@ -16,6 +16,7 @@ html {
   }
   body {
     position: relative;
+    color: $azul;
   }
   body,
   h1,
@@ -37,6 +38,11 @@ html {
   h3 {
     line-height: 1em;
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: $cafe;
+    span{
+      color: $azul;
+    }
   }
   h1 {
     font-size: clamp(3em, 5vw, 90vw);
@@ -45,7 +51,6 @@ html {
   h2 {
     font-size: clamp(2em, 3vw, 60vw);
     font-weight: bold;
-    color: $verde;
     padding-bottom: 1rem;
   }
   h3 {
@@ -69,7 +74,7 @@ html {
     @extend .anime;
     &:hover {
       transform: scale(1.1);
-      color: $naranja;
+
       @include cel{
         transform: scale(1);
         transform: none;
@@ -78,7 +83,7 @@ html {
   }
   
   .selected {
-    color: $naranja;
+    color: $cafe;
     transform: scale(1.1);
   }
   
@@ -96,15 +101,26 @@ html {
   }
   
   .cta {
-    border: none;
-    background: $naranja;
-    border-radius: 0.5rem;
+    border: solid 1px $cafe;
     padding: 0.3rem 1rem;
     font-weight: bold;
-    color: #fff;
+    color: $cafe;
+    // display: flex;
+    // align-items: center;
+    img{
+      flex: 1 0 auto;
+      padding-left:1rem;
+      height: 20px;
+      border-left: solid 1px $cafe;
+      margin-left: .5rem;
+    }
     &:hover {
-      background: #fff;
-      color: $naranja;
+      background:$dorado;
+      color: #fff;
+      border: none;
+      img{
+        mix-blend-mode:color-dodge;
+      }
     }
   }
   

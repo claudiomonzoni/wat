@@ -1,0 +1,74 @@
+---
+---
+
+<footer class="bandeja">
+  <ul>
+    <li>
+      <img
+        src="/img/wat-isotipo-home.svg"
+        alt="Wat Zihuatanejo arquitectura"
+        id="logopie"
+      />
+    </li>
+    <li><a href="#">proyectos</a></li>
+    <li><a href="#">servicios</a></li>
+    <li><a href="#">wat</a></li>
+    <li>
+      <a href="#"><img src="/img/instagram-ico.svg" alt="instagram" /></a>
+    </li>
+    <li><a href="#"><img src="/img/facebook-ico.svg" alt="facebook" /></a></li>
+    <li>
+      <a href="#">Dirección de la oficina, Zihuatanejo Centro, Mex. CP. 40880</a
+      >
+    </li>
+  </ul>
+</footer>
+
+<style lang="scss">
+  @import "../estilos/_variables.scss";
+  footer {
+    padding: 4rem 0;
+    border-top: solid 1px $cafe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    font-size: .8rem;
+    justify-content: center;
+    // #logopie {
+    //     width: 10%;
+    // }
+    ul {
+      align-items: center;
+      display: flex;
+      gap: 1.5rem;
+      @include cel{
+        flex-wrap:wrap
+      }
+      li:first-child{
+          flex: 1 1 10%;
+  
+          img{
+              width: 30%;
+          }
+          @include cel{
+            flex: 1 0 100%;
+            img{
+                width: 20%;
+            }
+          }
+        }
+        li {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+    }
+    @include cel {
+      flex-wrap: wrap;
+      justify-content: center;
+      ul {
+        padding-top: 1.5rem;
+      }
+    }
+  }
+</style>

@@ -1,11 +1,127 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout titulo="Wat design Arquitectura" descripcion="Servicios de diseño y construcción arquitectonico en Ixtapa Zihuatanejo">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		
-	</main>
+<Layout
+  titulo="Wat design Arquitectura"
+  descripcion="Servicios de diseño y construcción arquitectonico en Ixtapa Zihuatanejo"
+>
+  <main>
+    <Nav />
+    <div id="hero" class="bandeja">
+      <div class="logohome">
+        <img
+          src="/img/wat-isotipo-home.svg"
+          alt="Servicios de diseño arquitectonico en Ixtapa Zihuatanejo"
+        />
+      </div>
+      <div class="conte">
+        <h1>ARQUITURA <span>EN ZIHUATANEJO</span></h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. <b
+            >Neque magnam necessitatibus</b
+          >voluptatibus ullam rem dignissimos? <br />
+          <a href="#" class="cta"
+            >conoce wat design <img
+              src="/img/flecha.svg"
+              alt="conoce wat design en zihuatanejo"
+            /></a
+          >
+        </p>
+      </div>
+    </div>
+
+    <div id="navega-home" class="bandeja">
+      <div class="nave">
+        <h2>PROYECTOS</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. <b
+            >Fuga in assumenda</b
+          > officia?
+        </p>
+        <a href="#" class="cta"
+          >todos los proyectos <img
+            src="/img/flecha.svg"
+            alt="ver proyectos de wat zihuatanejo"
+          /></a
+        >
+      </div>
+      <div class="nave">
+        <h2>SERVICIOS</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. <b
+            >Fuga in assumenda</b
+          > consectetur adipisicing elit
+        </p>
+        <a href="#" class="cta"
+          >ver servicios <img
+            src="/img/flecha.svg"
+            alt="ver proyectos de wat zihuatanejo"
+          /></a
+        >
+      </div>
+    </div>
+
+    <Footer />
+  </main>
 </Layout>
+
+<style lang="scss">
+  @import "../estilos/_variables.scss";
+  #hero {
+    padding: $margen-abajo 0;
+    text-align: center;
+    .conte {
+      text-align: left;
+      display: flex;
+      gap: 2%;
+      padding: 2rem $margen-abajo;
+      margin-top: $margen-abajo;
+      align-items: center;
+      justify-content: center;
+      @include cel {
+        flex-wrap: wrap;
+        padding: 2rem 0;
+        h1 {
+          text-align: left !important;
+        }
+      }
+
+      h1 {
+        flex: 1 0 50%;
+        text-align: right;
+      }
+      p {
+        flex: 1 0 50%;
+        .cta {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  #navega-home {
+	border-top: solid 1px $cafe;
+    display: flex;
+	gap:2%;
+	@include cel{
+		flex-wrap: wrap;
+	}
+    .nave {
+      flex: 1 0 49%;
+	  margin: $margen-abajo 0;
+	  padding: 0 $margen;
+      p {
+        margin-bottom: 1rem;
+      }
+    }
+	.nave:first-child{
+		border-right: solid 1px $cafe;
+		@include cel{
+			border-right:none;
+		}
+	}
+  }
+</style>

@@ -34,3 +34,25 @@
     }
 
 </style>
+
+<script>
+    import gsap from "gsap";
+    let tl = gsap.timeline({ repeat: 0 });
+    tl.from("nav",{
+        y: -20,
+    });
+    tl.from("nav img", {
+      x: 50,
+      opacity: 0,
+      duration: 1, //1 segundo
+    });
+    tl.from(
+      "nav ul li",
+      {
+        stagger: 0.1,
+        x: 60,
+        opacity: 0,
+        duration: 1,
+      }
+    );
+  </script>

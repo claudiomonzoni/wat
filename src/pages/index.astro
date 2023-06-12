@@ -587,9 +587,9 @@ import Layout from "../layouts/Layout.astro";
     transformOrigin: "top",
     ease: "Power1.easeOut",
     opacity: 0,
-    duration: 0.4,
+    duration: 0.7,
   });
-  tl.from(" .conte > h1, .conte > p", {
+  tl.from(" .conte > h1", {
     stagger: {
       amount: 1,
     },
@@ -597,13 +597,29 @@ import Layout from "../layouts/Layout.astro";
     y: 100,
     opacity: 0,
   });
+  tl.from(" .conte > p", {
+    stagger: {
+      amount: 1,
+    },
+    delay: -.2,
+    y: 100,
+    opacity: 0,
+  });
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from(".nave, .logos", {
-  scrollTrigger: ".nave, .logos > img",
+  gsap.from(".nave", {
+  scrollTrigger: ".nave",
   stagger: 0.3,
   y: 100,
   opacity: 0,
 });
+  gsap.from(".logos > img", {
+  scrollTrigger: ".logos > img",
+  stagger: .3,
+  y: 100,
+  opacity: 0,
+});
+
+
 </script>

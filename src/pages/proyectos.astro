@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  titulo="Proyecto de aquitectura Wat design"
+  descripcion="Muesta de los proyectos arquitectonicos más recientes"
+>
+  <Nav />
+
+  <div id="hero-int">
+    <div class="conte">
+      <div class="bandeja">
+        <h1>Proyectos</h1>
+        <h2>arquitectonicos | wat desing</h2>
+        <p>
+          Lorem, ipsum <b>dolor sit amet consectetur</b>adipisicing elit.
+          Possimus, blanditiis placeat. Deserunt expedita nisi atque
+          necessitatibus iste ipsa cupiditate perferendis.
+        </p>
+      </div>
+    </div>
+    <img
+      src="/img/isotipo-proyectos.svg"
+      alt="proyectos de arquitectura wat en zihuatanejo"
+    />
+  </div>
+
+  <Footer />
+</Layout>
+
+<style lang="scss">
+  @import "../estilos/_variables.scss";
+  #hero-int {
+    display: flex;
+
+    .conte {
+      flex: 1 0 50%;
+      .bandeja{
+        width: 70%;
+      }
+    }
+    img {
+      flex: 1 0 50%;
+      width: 10%;
+      height: auto;
+    }
+  }
+</style>

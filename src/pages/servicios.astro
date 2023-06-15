@@ -4,10 +4,246 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout titulo="Servicios wat design" descripcion="Servicios de diseño arquitectonico, construcción y asesorías en Zihuatanejo">
-    <Nav />
+<Layout
+  titulo="Servicios wat design"
+  descripcion="Servicios de diseño arquitectonico, construcción y asesorías en Zihuatanejo"
+>
+  <Nav />
+  <div class="bandeja">
+    <div class="hero">
+      <div class="izq">
+        <div class="conte">
+          <h1>SERVICIOS</h1>
+          <h2>arquitectonicos | wat design</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+            nulla doloribus numquam.
+          </p>
+        </div>
+      </div>
+      <div class="der">
+        <img
+          src="/img/isotipo-servicios.svg"
+          alt="servicios de diseño arquitectonico en ixtapa zihuatanejo"
+        />
+      </div>
+    </div>
+  </div>
 
-<h1>Servicios</h1>
+  <div id="riel">
+    <div class="vagon">
+      <h3>¿Cual es tu sueño?</h3>
+      <h2>WAT IS YOUR DREAM?</h2>
+      <p>
+        <b>Nuestro proceso creativo de diseño constructivo</b> te ayuda a materializar
+        el anhelo de ver construido tu proyecto, eliminando cualquier riesgo de construir
+        e invertir en una obra que no te deje satisfecho.
+      </p>
+      <div class="bande">
+        <div class="conte">
+          <h3>RECURSOS</h3>
+          <p>
+            Nuestro proceso se adapta y busca resolver necesidades de <b
+              >proyectos con presupuestos variados.</b
+            >
+          </p>
+        </div>
+        <div class="conte">
+          <h3>TU SUEÑO</h3>
+          <p>
+            Además de soluciones arquitectónicas, damos importancia en nuestro
+            proceso a tus <b>propósitos y contexto</b> en el que tu proyecto se debe
+            realizar
+          </p>
+        </div>
+      </div>
+    </div>
 
-    <Footer />
+    <div class="vagon">
+      <h3>¿Cuales son tus necesidades?</h3>
+      <h2>WAT IS YOUR NEAD?</h2>
+      <p>
+        <b>Inicio del diseño</b> de tu proyecto donde materializamos tu sueño
+      </p>
+      <div class="bande">
+        <div class="conte">
+          <h3>TE CONOCEMOS</h3>
+          <p>
+            Aprendemos tus gustos, necesidades y las tomamos en cuenta para
+            proponer diseños adecuados.
+          </p>
+        </div>
+        <div class="conte">
+          <h3>APLICA EN:</h3>
+          <ul>
+            <li>Diseño Arquitectónico</li>
+            <li>Proyectos Arquitectónicos</li>
+            <li>Proyectos Ejecutivos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="vagon">
+      <h3>¿Qué seleccionas?</h3>
+      <h2>WAT YOU CHOOSE?</h2>
+      <p>Después de conocer tus gustos y necesidades el proceso deriva en:</p>
+      <div class="bande">
+        <div class="conte">
+          <h3>PROPUESTAS</h3>
+          <p>Te mostramos dos propuestas adecuadas al proyecto</p>
+        </div>
+        <div class="conte">
+          <h3>APLICA EN:</h3>
+          <ul>
+            <li>Propuesta A</li>
+            <li>Propuesta B</li>
+          </ul>
+          <div>
+            <p class="conte">
+              <b>Sesiones</b> de revisiones
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vagon">
+      <h3>¿Qué construyes?</h3>
+      <h2>WAT YOU BUILD?</h2>
+      <p>finalmente recibes:</p>
+      <div class="bande">
+        <div class="conte">
+          <h3>ENTREGA</h3>
+          <p>
+            <b>Esta etapa constituye la entrega</b> de planos arquitectónicos y de
+            instalaciones autorizados para su construcción.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<Footer />
+
+<style lang="scss">
+  @import "../estilos/_variables.scss";
+
+  .hero {
+    display: flex;
+    padding: 2rem 0;
+    height: 70vh;
+    @include cel {
+      flex-wrap: wrap;
+    }
+    .izq,
+    .der {
+      flex: 1 1 auto;
+      display: inherit;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .conte {
+      width: 70%;
+    }
+
+    img {
+      width: 80%;
+    }
+    h2 {
+      color: $azul;
+      font-size: clamp(1.3rem, 2vw, 2rem);
+      font-weight: lighter;
+    }
+  }
+
+  #riel {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: hidden;
+    padding-left: $margen-riel;
+    .vagon {
+      @include cel {
+        width: 85vw;
+        .bande {
+          flex-wrap: wrap;
+        }
+        .conte {
+          flex: 1 1 auto;
+          padding: 0 !important;
+          &:last-child {
+            border-left: none !important;
+          }
+        }
+      }
+      width: 100vw;
+      padding: 2rem;
+      h3 {
+        color: $negro;
+        font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+      }
+      .bande {
+        display: flex;
+        gap: 2rem;
+        .conte {
+          flex: 1;
+          padding: 2rem;
+          margin-top: 2rem;
+          &:last-child {
+            border-left: solid 1px $azul;
+          }
+          h3 {
+            color: $dorado;
+          }
+        }
+      }
+    }
+  }
+</style>
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const riel = document.querySelector("#riel");
+  const vagones = gsap.utils.toArray("#riel .vagon");
+  const losvagones = document.querySelectorAll(".vagon");
+
+  let scrollAnima = gsap.to(vagones, {
+    xPercent: -100 * (vagones.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: riel,
+      pin: true,
+      start: "center center",
+      scrub: 2,
+      end: "+=3000",
+      snap: {
+        snapTo: 1 / (vagones.length - 1),
+        duration: 1,
+        delay: 0.6,
+        ease: "power1.inOut",
+      },
+      markers: true,
+    },
+  });
+
+  losvagones.forEach((vagon) => {
+    let h3 = vagon.querySelectorAll("h3");
+    let h2 = vagon.querySelectorAll("h2");
+    let p = vagon.querySelectorAll("p");
+    let conte = vagon.querySelectorAll(".conte");
+    gsap.from(h3, {
+      y: -100,
+      opacity: 0,
+      stagger: 0.6,
+      scrollTrigger: {
+        trigger: vagon,
+        containerAnimation: scrollAnima,
+        start: "left center",
+      },
+    });
+  });
+</script>

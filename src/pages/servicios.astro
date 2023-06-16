@@ -217,15 +217,15 @@ import Footer from "../components/Footer.astro";
     scrollTrigger: {
       trigger: riel,
       pin: true,
-      start: "center center",
-      scrub: 2,
+      start: "center center center",
+      scrub: 1,
       end: "+=3000",
-      snap: {
-        snapTo: 1 / (vagones.length - 1),
-        duration: 1,
-        delay: 0.6,
-        ease: "power1.inOut",
-      },
+      // snap: {
+      //   snapTo: 1 / (vagones.length - 1),
+      //   duration: 1,
+      //   delay: 0.6,
+      //   ease: "power1.inOut",
+      // },
       markers: true,
     },
   });
@@ -235,10 +235,11 @@ import Footer from "../components/Footer.astro";
     let h2 = vagon.querySelectorAll("h2");
     let p = vagon.querySelectorAll("p");
     let conte = vagon.querySelectorAll(".conte");
-    gsap.from(h3, {
-      y: -100,
+
+    gsap.from([h3, p, conte],  {
+      y: -50,
       opacity: 0,
-      stagger: 0.6,
+      stagger: 0.1,
       scrollTrigger: {
         trigger: vagon,
         containerAnimation: scrollAnima,

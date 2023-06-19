@@ -99,11 +99,12 @@ import Footer from "../components/Footer.astro";
             <li>Propuesta A</li>
             <li>Propuesta B</li>
           </ul>
-          <div>
-            <p class="conte">
-              <b>Sesiones</b> de revisiones
-            </p>
-          </div>
+        </div>
+
+        <div class="conte">
+          <p >
+            <b>Sesiones</b> de revisiones
+          </p>
         </div>
       </div>
     </div>
@@ -187,6 +188,12 @@ import Footer from "../components/Footer.astro";
       .bande {
         display: flex;
         gap: 2rem;
+        @include cel {
+          flex-wrap: wrap;
+          .conte {
+            flex: 1 1 100% !important;
+          }
+        }
         .conte {
           flex: 1;
           padding: 2rem;
@@ -226,7 +233,7 @@ import Footer from "../components/Footer.astro";
       //   delay: 0.6,
       //   ease: "power1.inOut",
       // },
-      markers: true,
+      // markers: true,
     },
   });
 
@@ -236,7 +243,7 @@ import Footer from "../components/Footer.astro";
     let p = vagon.querySelectorAll("p");
     let conte = vagon.querySelectorAll(".conte");
 
-    gsap.from([h3, p, conte],  {
+    gsap.from([h3, p, conte], {
       y: -50,
       opacity: 0,
       stagger: 0.1,

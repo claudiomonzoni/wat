@@ -31,7 +31,7 @@ import Footer from "../components/Footer.astro";
   </div>
 
   <div id="riel">
-    <div class="vagon">
+    <div class="vagon pad">
       <h3>¿Cual es tu sueño?</h3>
       <h2>WAT IS YOUR DREAM?</h2>
       <p>
@@ -59,7 +59,7 @@ import Footer from "../components/Footer.astro";
       </div>
     </div>
 
-    <div class="vagon">
+    <div class="vagon pad">
       <h3>¿Cuales son tus necesidades?</h3>
       <h2>WAT IS YOUR NEAD?</h2>
       <p>
@@ -84,7 +84,7 @@ import Footer from "../components/Footer.astro";
       </div>
     </div>
 
-    <div class="vagon">
+    <div class="vagon pad">
       <h3>¿Qué seleccionas?</h3>
       <h2>WAT YOU CHOOSE?</h2>
       <p>Después de conocer tus gustos y necesidades el proceso deriva en:</p>
@@ -100,16 +100,15 @@ import Footer from "../components/Footer.astro";
             <li>Propuesta B</li>
           </ul>
         </div>
-
         <div class="conte">
-          <p >
+          <p>
             <b>Sesiones</b> de revisiones
           </p>
         </div>
       </div>
     </div>
 
-    <div class="vagon">
+    <div class="vagon pad">
       <h3>¿Qué construyes?</h3>
       <h2>WAT YOU BUILD?</h2>
       <p>finalmente recibes:</p>
@@ -125,7 +124,100 @@ import Footer from "../components/Footer.astro";
     </div>
   </div>
 
-  
+  <div class="bandeja">
+    <div class="vagon anchoauto">
+      <h3>Nosotros resolvemos toda tu</h3>
+      <h2>CONSTRUCCIÓN</h2>
+      <p class="borde-abajo">
+        Una vez ya tengas tu diseño, te ofrecemos 2 opciones para construir
+      </p>
+      <div class="bande">
+        <div class="conte">
+          <h3>Llave en mano</h3>
+          <p>
+            <b>No encargamos de todo</b> hasta entregarte las llaves de tu inmueble.
+          </p>
+          <ul>
+            <li>Gestión de tramites y licencias</li>
+            <li>Control de obra</li>
+            <li>Administración de recursos (compra y logística)</li>
+            <li>
+              Administración de recursos humanos (altas imss, pagos, etc...)
+            </li>
+            <li>Supervisión de obras</li>
+          </ul>
+        </div>
+        <div class="conte">
+          <h3>Administración</h3>
+          <p>
+            O te apoyamos en <b>solo lo que necesites.</b>
+          </p>
+          <ul>
+            <li class="raya">Gestión de tramites y licencias</li>
+            <li><b>Control de obra</b></li>
+            <li class="raya">
+              Administración de recursos (compra y logística)
+            </li>
+            <li>
+              <b>
+                Administración de recursos humanos (altas imss, pagos, etc...)</b
+              >
+            </li>
+            <li class="raya">Supervisión de obras</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bandeja">
+    <div class="vagon anchoauto">
+      <h3>bienes raíces</h3>
+      <h2>REAL PROPERTY</h2>
+      <p class="borde-abajo">
+        Te ayudamos a conseguir <b>la propiedad de tus sueños</b>
+      </p>
+      <div class="bande">
+        <div class="conte">
+          <h3>Terrenos</h3>
+          <p>
+            Lorem ipsum <b>dolor sit amet consectetur</b>. Donec quis lacus ac
+            mattis. Vestibulum mauris tempus faucibus malesuada molestie a
+          </p>
+        </div>
+        <div class="conte">
+          <h3>Renta o compra</h3>
+          <p>
+            <b>Donec quis lacus ac mattis.</b> Vestibulum mauris tempus faucibus
+            malesuada molestie a
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="riel2">
+    <div class="vagon2">
+      <h2>ASESORÍAS</h2>
+      <p>
+        <b>Puedes acercarte a nosotros para que te apoyemos en temas como:
+      </p>
+      <div class="bande">
+        <div class="conte">
+          1
+        </div>
+        <div class="conte">
+          <h3>inmuebles</h3>
+          <p>
+            Te asesoramos en la compra de terrenos y propiedades.
+          </p>
+        </div>
+       
+      </div>
+    </div>
+
+
+  </div>
 </Layout>
 
 <Footer />
@@ -162,50 +254,68 @@ import Footer from "../components/Footer.astro";
     }
   }
 
+  .borde-abajo {
+    border-bottom: solid 1px $dorado;
+    padding-bottom: $margen;
+  }
+  .anchoauto {
+    width: auto !important;
+    margin-bottom: $margen-abajo;
+  }
+  .pad {
+    padding: 0 20%;
+  }
+  ul {
+    padding: $margen 0;
+    li {
+      margin-bottom: .6rem;
+      list-style-type: disc;
+    }
+  }
+  .raya{
+    text-decoration:line-through;
+  }
   #riel {
     display: grid;
     grid-auto-flow: column;
-    overflow-x: hidden;
+    overflow: hidden;
     padding-left: $margen-riel;
-    .vagon {
-      @include cel {
-        width: 85vw;
-        .bande {
-          flex-wrap: wrap;
-        }
-        .conte {
-          flex: 1 1 auto;
-          padding: 0 !important;
-          &:last-child {
-            border-left: none !important;
-          }
-        }
-      }
-      width: 100vw;
-      padding: 0 20%;
-      h3 {
-        color: $negro;
-        font-size: clamp(1.1rem, 1.3vw, 1.5rem);
-      }
+  }
+
+  .vagon {
+    width: 100vw;
+
+    @include cel {
+      width: 85vw;
       .bande {
-        display: flex;
-        gap: 2rem;
-        @include cel {
-          flex-wrap: wrap;
-          .conte {
-            flex: 1 1 100% !important;
-          }
+        flex-wrap: wrap;
+      }
+      .conte {
+        flex: 1 0 100% !important;
+        padding: 0 !important;
+        &:last-child {
+          border-left: none !important;
         }
-        .conte {
-          flex: 1;
-          padding: 2rem;
-          margin-top: 2rem;
-          &:last-child {
-            border-left: solid 1px $azul;
-          }
-          h3 {
-            color: $dorado;
-          }
+      }
+    }
+
+    h3 {
+      color: $negro;
+      font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+    }
+    .bande {
+      display: flex;
+      gap: 2rem;
+
+      .conte {
+        flex: 1;
+        padding: 2rem;
+        margin-top: 2rem;
+        &:last-child {
+          border-left: solid 1px $azul;
+        }
+        h3 {
+          color: $dorado;
         }
       }
     }
@@ -218,7 +328,7 @@ import Footer from "../components/Footer.astro";
 
   const riel = document.querySelector("#riel");
   const vagones = gsap.utils.toArray("#riel .vagon");
-  const losvagones = document.querySelectorAll(".vagon");
+  const losvagones = document.querySelectorAll("#riel .vagon");
 
   let scrollAnima = gsap.to(vagones, {
     xPercent: -100 * (vagones.length - 1),
@@ -229,12 +339,12 @@ import Footer from "../components/Footer.astro";
       start: "center center center",
       scrub: 1,
       end: "+=3000",
-      // snap: {
-      //   snapTo: 1 / (vagones.length - 1),
-      //   duration: 1,
-      //   delay: 0.6,
-      //   ease: "power1.inOut",
-      // },
+      snap: {
+        snapTo: 1 / (vagones.length - 1),
+        duration: 1,
+        delay: 0.6,
+        ease: "power1.inOut",
+      },
       // markers: true,
     },
   });

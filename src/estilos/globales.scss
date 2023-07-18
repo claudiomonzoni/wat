@@ -17,6 +17,8 @@ html {
   body {
     position: relative;
     color: $azul;
+    background: url(/img/tringulos-fondo-a.svg) no-repeat, url(/img/tringulos-fondo-b.svg) no-repeat;
+    background-position: 0 10%, right 100%;
   }
   body,
   h1,

@@ -195,28 +195,41 @@ import Footer from "../components/Footer.astro";
     </div>
   </div>
 
-
-  <div id="riel2">
-    <div class="vagon2">
+  <div id="asesorias">
+    <div class="bandeja">
       <h2>ASESORÍAS</h2>
-      <p>
-        <b>Puedes acercarte a nosotros para que te apoyemos en temas como:
-      </p>
-      <div class="bande">
-        <div class="conte">
-          1
-        </div>
+      <p>Puedes acercarte a nosotros para que te apoyemos en temas como:</p>
+    </div>
+    <div id="riel2">
+      <div class="asesoria">
+        <div class="num">1</div>
         <div class="conte">
           <h3>inmuebles</h3>
-          <p>
-            Te asesoramos en la compra de terrenos y propiedades.
-          </p>
+          <p>Te asesoramos en la compra de terrenos y propiedades.</p>
         </div>
-       
+      </div>
+      <div class="asesoria">
+        <div class="num">2</div>
+        <div class="conte">
+          <h3>inmuebles</h3>
+          <p>Te asesoramos en la compra de terrenos y propiedades.</p>
+        </div>
+      </div>
+      <div class="asesoria">
+        <div class="num">3</div>
+        <div class="conte">
+          <h3>inmuebles</h3>
+          <p>Te asesoramos en la compra de terrenos y propiedades.</p>
+        </div>
+      </div>
+      <div class="asesoria">
+        <div class="num">4</div>
+        <div class="conte">
+          <h3>inmuebles</h3>
+          <p>Te asesoramos en la compra de terrenos y propiedades.</p>
+        </div>
       </div>
     </div>
-
-
   </div>
 </Layout>
 
@@ -267,13 +280,14 @@ import Footer from "../components/Footer.astro";
   }
   ul {
     padding: $margen 0;
+    margin-left: $margen;
     li {
-      margin-bottom: .6rem;
+      margin-bottom: 0.6rem;
       list-style-type: disc;
     }
   }
-  .raya{
-    text-decoration:line-through;
+  .raya {
+    text-decoration: line-through;
   }
   #riel {
     display: grid;
@@ -320,6 +334,30 @@ import Footer from "../components/Footer.astro";
       }
     }
   }
+  #asesorias {
+    padding-bottom: $margen-abajo;
+    overflow: hidden;
+    #riel2 {
+      padding-top: $margen;
+      display: flex;
+    }
+    .asesoria {
+      display: flex;
+      flex: 1 0 60%;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      .num {
+        font-size: clamp(5rem, 2.3vw, 6rem);
+        font-weight: bold;
+        padding: 2rem;
+      }
+      .conte {
+        border-left: solid 1px $azul;
+        padding: 2rem;
+      }
+    }
+  }
 </style>
 <script>
   import gsap from "gsap";
@@ -327,7 +365,9 @@ import Footer from "../components/Footer.astro";
   gsap.registerPlugin(ScrollTrigger);
 
   const riel = document.querySelector("#riel");
+  const riel2 = document.querySelector("#riel2");
   const vagones = gsap.utils.toArray("#riel .vagon");
+  const asesoria = gsap.utils.toArray("#riel2 .asesoria");
   const losvagones = document.querySelectorAll("#riel .vagon");
 
   let scrollAnima = gsap.to(vagones, {
@@ -341,6 +381,25 @@ import Footer from "../components/Footer.astro";
       end: "+=3000",
       snap: {
         snapTo: 1 / (vagones.length - 1),
+        duration: 1,
+        delay: 0.6,
+        ease: "power1.inOut",
+      },
+      // markers: true,
+    },
+  });
+
+  let scrollAsesoria = gsap.to(asesoria, {
+    xPercent: -100 * (asesoria.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: riel2,
+      pin: true,
+      start: "center center center",
+      scrub: 1,
+      end: "+=3000",
+      snap: {
+        snapTo: 1 / (asesoria.length - 1),
         duration: 1,
         delay: 0.6,
         ease: "power1.inOut",

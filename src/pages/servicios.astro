@@ -347,6 +347,15 @@ import Footer from "../components/Footer.astro";
       align-items: center;
       justify-content: center;
       width: 100%;
+      @include cel{
+        flex-wrap:wrap;
+        .conte{
+          border-left:none!important;
+          border-top:solid 1px $azul;
+          font-size:clamp(1.2rem, 2vw, 1.5rem);
+          margin: 1rem;
+        }
+      }
       .num {
         font-size: clamp(5rem, 2.3vw, 6rem);
         font-weight: bold;

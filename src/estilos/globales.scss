@@ -19,6 +19,9 @@ html {
     color: $azul;
     background: url(/img/tringulos-fondo-a.svg) no-repeat, url(/img/tringulos-fondo-b.svg) no-repeat;
     background-position: 0 10%, right 100%;
+    @include cel{
+      background-size: 30% 30%, 20% 20%;
+    }
   }
   body,
   h1,
@@ -135,10 +138,14 @@ html {
     text-align: center;
   }
   .empujeliga{
-    margin-top: 20vh;
-    margin-bottom: -4rem;
+    margin-top: 20%;
+    margin-bottom: 3%;
     @include cel{
-      margin-top: 10%;
-      margin-bottom: 10%;
+      margin-top: 20%;
+      margin-bottom: 20%;
+    }
+    @include hdplus{
+      margin-top: 15%;
+      margin-bottom: 3%;
     }
   }

@@ -4,10 +4,133 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout titulo="Servicios wat design" descripcion="Servicios de diseño arquitectonico, construcción y asesorías en Zihuatanejo">
-    <Nav />
+<Layout
+  titulo="Servicios wat design"
+  descripcion="Servicios de diseño arquitectonico, construcción y asesorías en Zihuatanejo"
+>
+  <Nav />
+  <div id="hero-int">
+    <div class="conte">
+      <div class="izq">
+        <div class="bandeja">
+          <h1><b>arquitectura</b> en Zihuatanejo</h1>
+          <h2>WAT DESIGN</h2>
+        </div>
+      </div>
+      <div class="der">
+        <img src="/img/cover-contacto.png" alt="arquitectura en zihutanejo" />
+      </div>
+    </div>
+  </div>
 
-<h1>Wat</h1>
+  <div id="integrantes" class="bandeja">
+    <div id="col">
+      <div id="recuadro">
+        <img src="/img/mixael-bio.jpg" alt="" />
+        <div class="bio">
+          <h3>Mixael Apellidos</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
+            repudiandae ipsam.
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+            dolores tempore repellat soluta aut, asperiores voluptates
+            molestias! Dolor, eius velit!
+          </p>
+        </div>
+      </div>
 
-    <Footer />
+      <div id="contacto">
+        <h2>contacto</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+          atque?
+        </p>
+        <form action="#">
+          <input type="text" placeholder="nombre" />
+          <input type="text" placeholder="ciudad" />
+          <input type="email" placeholder="e-mail" />
+          <input type="number" placeholder="teléfono" />
+          <textarea name="mensaje" id="mensaje" placeholder="mensaje"
+          ></textarea>
+          <button type="submit">enviar</button>
+        </form>
+      </div>
+
+      <div id="logo">
+        <img src="/img/isotipo-contacto.png" alt="Contacto wat design" />
+      </div>
+
+      <div id="recuadro">
+        <img src="/img/socio-bio.png" alt="" />
+        <div class="bio">
+          <h3>Socio Apellidos</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
+            repudiandae ipsam.
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
+            dolores tempore repellat soluta aut, asperiores voluptates
+            molestias! Dolor, eius velit!
+          </p>
+        </div>
+      </div>
+      <div id="mapa">
+        <div id="map">aqui el mapa</div>
+        <div class="recuadro-cafe">
+            <ul>
+
+                <li>hola@watdesign.com</li>
+                <li>Dirección de la oficina, Zihuatanejo Centro, Mex. CP. 40880</li>
+                <li>755 1073 459</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Footer />
 </Layout>
+
+<style lang="scss">
+  @import "../estilos/_variables.scss";
+  #hero-int > .conte {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+    .izq,
+    .der {
+      display: inherit;
+      flex: 1 0 50%;
+      align-items: center;
+    }
+    .izq {
+      .bandeja {
+        width: 50%;
+      }
+    }
+    .der {
+      justify-content: end;
+    }
+    h1 {
+      color: $azul;
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: lighter;
+    }
+    h2 {
+      font-size: clamp(4.2rem, 6vw, 5.5rem);
+      font-weight: bolder;
+    }
+  }
+  #integrantes {
+    display: flex;
+    justify-content: center;
+  }
+  #col {
+    width: 40%;
+    columns: 2;
+  }
+</style>

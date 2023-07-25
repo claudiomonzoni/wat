@@ -4,7 +4,6 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 const lat = "17.639773";
 const lang = "-101.557641";
-
 ---
 
 <Layout
@@ -29,7 +28,7 @@ const lang = "-101.557641";
   <div id="integrantes" class="bandeja">
     <div id="col">
       <div class="recuadro">
-        <img src="/img/mixael-bio.jpg" alt="" />
+        <img src="/img/mixael-bio.jpg" alt="Arquitecto Mixael" />
         <div class="bio">
           <h2>Mixael Apellidos</h2>
           <p>
@@ -45,13 +44,13 @@ const lang = "-101.557641";
       </div>
 
       <div id="contacto">
-       <div class="cubeta">
-        <h2>contacto</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
-          atque?
-        </p>
-       </div>
+        <div class="cubeta">
+          <h2>contacto</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+            atque?
+          </p>
+        </div>
         <form action="#">
           <input type="text" placeholder="nombre" />
           <input type="text" placeholder="ciudad" />
@@ -87,10 +86,52 @@ const lang = "-101.557641";
         <div class="recuadro-cafe">
           <ul>
             <li><a href="mailto:hola@watdesign.com">hola@watdesign.com</a></li>
-            <li> <a href="#">Dirección de la oficina, Zihuatanejo Centro, Mex. CP. 40880<</a></li>
+            <li>
+              <a href="#"
+                >Dirección de la oficina, Zihuatanejo Centro, Mex. CP. 40880<</a
+              >
+            </li>
             <li><a href="tel:7551073459">755 1073 459</a></li>
           </ul>
         </div>
+      </div>
+    </div>
+  </div>
+  <div id="talento">
+    <div id="talento-grid" class="bandeja">
+      <div class="recuadro">
+        <div class="conte">
+          <h2>TALENTO</h2>
+          <p>
+            Wat design en convenio con el Tecnológico de la Costa Grande apoya
+            con pasantías a los alumnos de esta institución.
+          </p>
+        </div>
+      </div>
+      <div class="recuadro">
+        <img
+          src="/img/talento-1.png"
+          alt="Wat design pasantias Tecnologico de la costa grande"
+        />
+      </div>
+      <div class="recuadro vacio"></div>
+      <div class="recuadro blanco">
+        <p>A orem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <img
+          src="/img/talento-2.png"
+          alt="Wat design pasantias Tecnologico de la costa grande"
+        />
+      </div>
+      <div class="recuadro vacio"></div>
+      <div class="recuadro blanco">
+        <p>
+          B Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+          ducimus laborum eaque.
+        </p>
+        <img
+          src="/img/talento-3.png"
+          alt="Wat design pasantias Tecnologico de la costa grande"
+        />
       </div>
     </div>
   </div>
@@ -105,8 +146,8 @@ const lang = "-101.557641";
     justify-content: space-evenly;
     align-items: center;
     margin-top: 2rem;
-    @include cel{
-      flex-wrap:wrap
+    @include cel {
+      flex-wrap: wrap;
     }
     .izq,
     .der {
@@ -136,20 +177,20 @@ const lang = "-101.557641";
     display: flex;
     justify-content: center;
   }
-  .recuadro-cafe{
-    background-color: $cafe!important;
-    color:#fff;
-    padding:1rem;
-    h2{
-      color: $dorado !important;;
+  .recuadro-cafe {
+    background-color: $cafe !important;
+    color: #fff;
+    padding: 1rem;
+    h2 {
+      color: $dorado !important;
     }
   }
   #col {
     width: 50%;
     columns: 2;
     column-gap: 0;
-    @include cel{
-      width:100%;
+    @include cel {
+      width: 100%;
     }
   }
   .recuadro > img {
@@ -157,22 +198,21 @@ const lang = "-101.557641";
     height: 100%;
     object-fit: cover;
     display: block;
-    
   }
-  #logo{
+  #logo {
     height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
     break-inside: avoid-column;
-    img{
+    img {
       width: 50%;
       height: auto;
     }
   }
-  #contacto{
+  #contacto {
     margin-bottom: 20vh;
-    .cubeta{
+    .cubeta {
       padding: 1rem;
       height: 29vh;
       display: flex;
@@ -180,85 +220,132 @@ const lang = "-101.557641";
       align-items: center;
       flex-wrap: wrap;
       align-content: center;
-      h2, p{
+      h2,
+      p {
         flex: 1 0 100%;
       }
     }
-    input, textarea{
+    input,
+    textarea {
       width: 100%;
       background-color: $azul;
       color: #fff;
-      padding: .5rem;
+      padding: 0.5rem;
       border: none;
-      margin-top: .3rem;
-      font-size: .8rem;
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
       &::placeholder {
-        color: #fff!important;
+        color: #fff !important;
       }
     }
-    button{
+    button {
       border: none;
       background-color: $azul;
       color: #fff;
-      padding:.5rem 1rem;
-      font-size:1rem
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
     }
   }
   .bio {
     background-color: $azul;
-    color:#fff;
+    color: #fff;
     padding: 2rem;
-    
-    p{
+
+    p {
       margin-bottom: 1rem;
-      &:last-child{
+      &:last-child {
         margin-bottom: 0rem;
       }
     }
-    h2{
+    h2 {
       color: #fff;
       font-size: clamp(1.2rem, 2vw, 1.5rem);
       font-weight: bold;
     }
   }
-  ul{
+  ul {
     padding: 1rem;
-    a{
+    a {
       color: #fff;
     }
   }
-  li{
+  li {
     list-style: disc;
     padding-top: 1rem;
-  &:first-child{
-    padding-top: 0;
+    &:first-child {
+      padding-top: 0;
+    }
   }
+  #map {
+    height: 37vh;
   }
-  #map{
-  height: 37vh;
+  #talento {
+    background: url("/img/bg-talento.png") no-repeat;
+    background-size: cover;
+    margin: 6rem 0;
+  }
+  #talento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    @include cel {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: auto;
+      .vacio {
+        height: 0vh !important;
+      }
+    }
+    .recuadro {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include cel {
+        height: 40vh;
+        &:last-child{
+          img{order: 1;}
+          p{order: 2; }
+        }
+      }
+      .conte {
+        width: 80%;
+      }
+      &:first-child {
+        p {
+          padding: 0 !important;
+        }
+      }
+      p {
+        padding: 0 1.5rem;
+        @include cel {
+          padding: 2rem;
+        }
+      }
+    }
+    .blanco {
+      background-color: hsla(0, 0%, 100%, 0.5);
+    }
   }
 </style>
 
 <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-    crossorigin=""
-  />
-  <script src="/leaflet.js" is:inline></script>
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+  integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+  crossorigin=""
+/>
+<script src="/leaflet.js" is:inline></script>
 
-  <script define:vars={{ lat, lang }}>
-    var map = L.map("map").setView([lat, lang], 17);
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution:
-        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }).addTo(map);
-    var circle = L.circle([lat, lang], {
-      color: "#5C728F",
-      fillColor: "#5C728F",
-      fillOpacity: 0.5,
-      radius: 20,
-    }).addTo(map);
-  </script>
-
+<script define:vars={{ lat, lang }}>
+  var map = L.map("map").setView([lat, lang], 17);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+  var circle = L.circle([lat, lang], {
+    color: "#5C728F",
+    fillColor: "#5C728F",
+    fillOpacity: 0.5,
+    radius: 20,
+  }).addTo(map);
+</script>

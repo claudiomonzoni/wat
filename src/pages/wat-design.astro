@@ -14,9 +14,9 @@ const lang = "-101.557641";
   <div id="hero-int">
     <div class="conte">
       <div class="izq">
-        <div class="bandeja">
-          <h1><b>arquitectura</b> en Zihuatanejo</h1>
-          <h2>WAT DESIGN</h2>
+        <div class="bandeja init">
+          <h1 class="ref"><b>arquitectura</b> en Zihuatanejo</h1>
+          <h2 class="ref">WAT DESIGN</h2>
         </div>
       </div>
       <div class="der">
@@ -26,7 +26,7 @@ const lang = "-101.557641";
   </div>
 
   <div id="integrantes" class="bandeja">
-    <div id="col">
+    <div id="col" class="int">
       <div class="recuadro">
         <img src="/img/mixael-bio.jpg" alt="Arquitecto Mixael" />
         <div class="bio">
@@ -43,7 +43,7 @@ const lang = "-101.557641";
         </div>
       </div>
 
-      <div id="contacto">
+      <div id="contacto" class="int">
         <div class="cubeta">
           <h2>contacto</h2>
           <p>
@@ -62,7 +62,7 @@ const lang = "-101.557641";
         </form>
       </div>
 
-      <div id="logo">
+      <div id="logo" class="int">
         <img src="/img/isotipo-contacto.png" alt="Contacto wat design" />
       </div>
 
@@ -81,7 +81,7 @@ const lang = "-101.557641";
           </p>
         </div>
       </div>
-      <div id="mapa">
+      <div id="mapa" class="int">
         <div id="map">aqui el mapa</div>
         <div class="recuadro-cafe">
           <ul>
@@ -99,7 +99,7 @@ const lang = "-101.557641";
   </div>
   <div id="talento">
     <div id="talento-grid" class="bandeja">
-      <div class="recuadro">
+      <div class="recuadro int">
         <div class="conte">
           <h2>TALENTO</h2>
           <p>
@@ -108,14 +108,14 @@ const lang = "-101.557641";
           </p>
         </div>
       </div>
-      <div class="recuadro">
+      <div class="recuadro int">
         <img
           src="/img/talento-1.png"
           alt="Wat design pasantias Tecnologico de la costa grande"
         />
       </div>
       <div class="recuadro vacio"></div>
-      <div class="recuadro blanco">
+      <div class="recuadro blanco int">
         <p>A orem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <img
           src="/img/talento-2.png"
@@ -123,7 +123,7 @@ const lang = "-101.557641";
         />
       </div>
       <div class="recuadro vacio"></div>
-      <div class="recuadro blanco">
+      <div class="recuadro blanco int">
         <p>
           B Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
           ducimus laborum eaque.
@@ -348,4 +348,53 @@ const lang = "-101.557641";
     fillOpacity: 0.5,
     radius: 20,
   }).addTo(map);
+
+</script>
+<script>
+   import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline({ repeat: 0 });
+  tl.delay(2);
+
+  tl.from(" .init > .ref", {
+    stagger: {
+      amount: .2,
+    },
+    y: 100,
+    opacity: 0,
+    ease: "Power1.easeOut",
+  });
+
+
+  tl.from(".der", {
+    y: "50",
+    // rotate: random,
+    // scaleY: 2,
+    // scaleX: 2,
+    transformOrigin: "top",
+    ease: "Power1.easeOut",
+    opacity: 0,
+    duration: 0.7,
+  });
+
+  gsap.registerPlugin(ScrollTrigger);
+  const proyectos = document.querySelectorAll(".int");
+  // For each images with class "animate-image" on page
+  proyectos.forEach((el) => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: el,
+        start: "left center",
+        // toggleActions: "play none none reverse",
+      },
+    });
+
+    tl.set(el, { transformOrigin: "top center" }).from(el, {
+      opacity: 0,
+      scale: 0.9,
+      y: "+=20",
+    });
+  });
 </script>

@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import Portafolio from "../components/Portafolio.jsx";
 ---
 
 <Layout
@@ -293,6 +294,7 @@ import Footer from "../components/Footer.astro";
     /> -->
   </div>
   <div id="proyectos" class="bandeja">
+    <Portafolio client:only></Portafolio>
     <div class="proyecto">
       <div class="lado">
         <div class="ima">
@@ -478,6 +480,7 @@ import Footer from "../components/Footer.astro";
 </style>
 
 <script>
+  
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   const random = gsap.utils.random(-100, 100);

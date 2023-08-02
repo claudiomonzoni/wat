@@ -293,56 +293,9 @@ import Portafolio from "../components/Portafolio.jsx";
       alt="proyectos de arquitectura wat en zihuatanejo"
     /> -->
   </div>
+  
   <div id="proyectos" class="bandeja">
     <Portafolio client:only></Portafolio>
-    <div class="proyecto">
-      <div class="lado">
-        <div class="ima">
-          <img src="/proyecto/proyecto-a.jpg" alt="algo aqui" />
-        </div>
-        <div class="contenido">
-          <div class="conte">
-            <h2>Aqui el titulo de cada proyecto</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-        </div>
-      </div>
-      <div class="lado"></div>
-    </div>
-    <div class="proyecto">
-      <div class="lado">
-        <div class="ima">
-          <img src="proyecto/proyecto-b.jpg" alt="algo aqui" />
-        </div>
-        <div class="contenido">
-          <div class="conte">
-            <h2>Otro proyecto</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores eveniet dicta minima Lorem ipsum dolor, sit amet
-              consectetur adipisicing elit. Voluptatem voluptate quasi dolorum!
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="lado"></div>
-    </div>
-    <div class="proyecto">
-      <div class="lado">
-        <div class="ima">
-          <img src="/proyecto/proyecto-c.png" alt="algo aqui" />
-        </div>
-        <div class="contenido">
-          <div class="conte">
-            <h2>Otro proyecto</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores eveniet dicta minima lorem12
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="lado"></div>
     </div>
     <div class="ligainferior empujeliga">
       <a href="/servicios" class="cta"
@@ -408,75 +361,7 @@ import Portafolio from "../components/Portafolio.jsx";
     }
   }
 
-  #proyectos {
-    transform: translateY(-5%);
-    @include cel {
-      transform: translateY(0%);
-    }
-    .proyecto {
-      margin: 0 auto;
-      margin-bottom: -20%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      width: 70%;
-      @include cel {
-        display: block;
-        margin-bottom: 2rem;
-        width: 90%;
-      }
-      div:first-child {
-        order: 0;
-      }
-      color: #fff;
-      h2 {
-        color: $dorado;
-        font-size: clamp(1.1rem, 1.9vw, 1.5rem);
-      }
-      .ima {
-        width: 100%;
-        height: 50%;
-        cursor: pointer;
-        @extend .anime;
-        &:hover {
-          scale: (1.04);
-        }
-        @include cel {
-          img {
-            margin-bottom: -4px;
-            aspect-ratio: 1/1.2;
-          }
-        }
-      }
-      img {
-        aspect-ratio: 1/1;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .contenido {
-        background: $azul;
-        padding: 2rem;
-      }
-      &:nth-child(2n + 0) {
-        // transform: translateY(-40%);
-        @include cel {
-          transform: translateY(0%);
-        }
-        .lado:first-child {
-          order: 1;
-          z-index: 100;
-        }
-        .lado:last-child {
-          pointer-events: none;
-          order: 0;
-          z-index: -1;
-          @include cel {
-            display: none;
-          }
-        }
-      }
-    }
-  }
+  // estilo de proyectos esta en globales
 </style>
 
 <script>

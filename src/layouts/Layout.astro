@@ -1,26 +1,45 @@
 ---
 export interface Props {
-	titulo: string;
-	descripcion: string;
+  titulo: string;
+  descripcion: string;
 }
 
 const { titulo, descripcion } = Astro.props;
-import '../estilos/globales.scss';
-
+import "../estilos/globales.scss";
 ---
 
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={descripcion}>
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{titulo}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={descripcion} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{titulo}</title>
+  </head>
+  <body data-barba="wrapper">
+    <slot />
+  </body>
 </html>
 
+<script>
+  import barba from "@barba/core";
+  import gsap from "gsap";
+  
+  barba.init({
+  transitions: [{
+    name: 'opacity-transition',
+    leave(data) {
+      return gsap.to(data.current.container, {
+        opacity: 0
+      });
+    },
+    enter(data) {
+      return gsap.from(data.next.container, {
+        opacity: 0
+      });
+    }
+  }]
+});
+</script>

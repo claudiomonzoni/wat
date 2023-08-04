@@ -614,8 +614,11 @@ import Footer from "../components/Footer.astro";
     }
   }
 </style>
+
 <script>
+
   import gsap from "gsap";
+ 
 
   let tl = gsap.timeline({ repeat: 0 });
   tl.delay(2);
@@ -710,7 +713,6 @@ import Footer from "../components/Footer.astro";
   });
 
   const proyectos = document.querySelectorAll(".int");
-  // For each images with class "animate-image" on page
   proyectos.forEach((el) => {
     let tl = gsap.timeline({
       scrollTrigger: {

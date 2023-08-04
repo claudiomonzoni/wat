@@ -5,6 +5,7 @@ export interface Props {
 }
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
+// import { ViewTransitions } from 'astro:transitions';
 const { titulo, descripcion } = Astro.props;
 import "../estilos/globales.scss";
 ---
@@ -12,6 +13,7 @@ import "../estilos/globales.scss";
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- <ViewTransitions /> -->
     <meta charset="UTF-8" />
     <meta name="description" content={descripcion} />
     <meta name="viewport" content="width=device-width" />

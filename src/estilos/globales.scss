@@ -158,7 +158,7 @@ html {
     }
     .proyecto {
       margin: 0 auto;
-      margin-bottom: -20%;
+      margin-bottom: -23vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
       width: 70%;
@@ -215,6 +215,7 @@ html {
       }
       &:nth-child(2n + 0) {
         // transform: translateY(-40%);
+     
         @include cel {
           transform: translateY(0%);
         }
@@ -225,7 +226,8 @@ html {
         .lado:last-child {
           pointer-events: none;
           order: 0;
-          z-index: -1;
+          z-index: -100;
+          visibility: hidden;
           @include cel {
             display: none;
           }

@@ -5,7 +5,7 @@ import Project from "./Project";
 
 export default function Portafolio() {
   const [abierto, setAbierto] = useState(false);
-  const [datos, setDatos] = useState([]);
+  // const [datos, setDatos] = useState([]);
   const [props, setProps] = useState();
 
   const [proyectos, setProyectos] = useState([]);
@@ -47,7 +47,6 @@ export default function Portafolio() {
   const btnProject = (props) => {
     setAbierto(!abierto);
     setProps(props);
-    console.log(props)
   };
   const cerrar = () => {
     setAbierto(false);
@@ -56,6 +55,8 @@ export default function Portafolio() {
   return (
     <>
       {abierto && <Project Props={props} cierrate={cerrar} />}
+      <div id="proyectos" className="bandeja">
+
       {proyectos.length &&
         proyectos.map((proyecto, index) => (
           <div className="proyecto" key={index}>
@@ -78,6 +79,7 @@ export default function Portafolio() {
             <div className="lado"></div>
           </div>
         ))}
+        </div>
     </>
   );
 }

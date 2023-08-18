@@ -7,14 +7,21 @@ export default function Portafolio() {
   const [abierto, setAbierto] = useState(false);
   // const [datos, setDatos] = useState([]);
   const [props, setProps] = useState();
-
+  const host = "http://localhost/wat/api";
   const [proyectos, setProyectos] = useState([]);
   const fetching = async () => {
     const response = await fetch(
-      `https://api.sampleapis.com/simpsons/products`
+      `https://sneakiest-springs.000webhostapp.com/wat/api/content/items/Proyecto`,
+      {
+        method: "GET",
+        headers: {
+          "api-key": "USR-42334a42d493e827a86a88fd05e0af3e1d9eb2b1",
+        },
+      }
     );
     const proyectoData = await response.json().then((proData) => {
       setProyectos(proData);
+      console.log(proData)
     });
   };
 
@@ -56,30 +63,33 @@ export default function Portafolio() {
     <>
       {abierto && <Project Props={props} cierrate={cerrar} />}
       <div id="proyectos" className="bandeja">
-
-      {proyectos.length &&
-        proyectos.map((proyecto, index) => (
-          <div className="proyecto" key={index}>
-            <div className="lado">
-              <div className="ima">
-              <a onClick={() => { btnProject(proyecto);}} > <img src="/proyecto/proyecto-a.jpg" alt="algo aqui" /> </a>
-              </div>
-              <div className="contenido">
-                <div className="conte">
-                  <h2>{proyecto.name}</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                  
-     
+        {proyectos.length &&
+          proyectos.map((proyecto, index) => (
+            <div className="proyecto" key={index}>
+              <div className="lado">
+                <div className="ima">
+                  <a
+                    onClick={() => {
+                      btnProject(proyecto);
+                    }}
+                  >
                  
+                    <img src={`https://sneakiest-springs.000webhostapp.com/wat/storage/uploads/${proyecto.galeria[0].path}`}  alt={proyecto.Titulo} />
+                  </a>
+                </div>
+                <div className="contenido">
+                  <div className="conte">
+                    <h2>{proyecto.Titulo}</h2>
+                    <p>
+                      {proyecto.descripcion}
+                    </p>
+                  </div>
                 </div>
               </div>
+              <div className="lado"></div>
             </div>
-            <div className="lado"></div>
-          </div>
-        ))}
-        </div>
+          ))}
+      </div>
     </>
   );
 }

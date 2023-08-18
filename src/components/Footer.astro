@@ -4,22 +4,34 @@
 <footer class="bandeja">
   <ul>
     <li>
-      <img
+      <a href="/">
+        <img
         src="/img/wat-isotipo-home.svg"
         alt="Wat Zihuatanejo arquitectura"
         id="logopie"
-      />
+      /></a>
     </li>
-    <li><a href="#">proyectos</a></li>
-    <li><a href="#">servicios</a></li>
-    <li><a href="#">wat</a></li>
+    <li><a href="/proyectos">proyectos</a></li>
+    <li><a href="/servicios">servicios</a></li>
+    <li><a href="/wat-design">wat</a></li>
     <li>
-      <a href="#"><img src="/img/instagram-ico.svg" alt="instagram" /></a>
+      <!-- <a href="/" target="_blank"><img src="/img/instagram-ico.svg" alt="instagram" /></a> -->
     </li>
-    <li><a href="#"><img src="/img/facebook-ico.svg" alt="facebook" /></a></li>
     <li>
-      <a href="#">Dirección de la oficina, Zihuatanejo Centro, Mex. CP. 40880</a
+      <a href="https://www.facebook.com/woniachitecturetank" target="_blank"
+        ><img src="/img/facebook-ico.svg" alt="facebook" /></a>
+    </li>
+    <li>
+      <a
+        href="https://www.google.com.mx/maps/place/Hotel+To%C3%B1ita/@17.6398477,-101.5574486,19.83z/data=!4m13!1m7!3m6!1s0x843477173ec91c25:0xb2403755da877c29!2sNicol%C3%A1s+Bravo,+Centro,+40890+Zihuatanejo,+Gro.!3b1!8m2!3d17.639938!4d-101.5570078!3m4!1s0x843477173f144f95:0x7c4c648565573317!8m2!3d17.639867!4d-101.5574002"
+        target="_blank"
+        >Nicolas Bravo #40, Col, Centro, Zihuatanejo, Gro. México.</a
       >
+    </li>
+    <li>
+      <b>
+        <a href="tel:755 133.3139"> &#9742; 755.133.3139</a>
+      </b>
     </li>
   </ul>
 </footer>
@@ -33,32 +45,32 @@
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    font-size: .8rem;
+    font-size: 0.8rem;
     justify-content: center;
-    // #logopie {
+    // /proyectoslogopie {
     //     width: 10%;
     // }
     ul {
       align-items: center;
       display: flex;
       gap: 1.5rem;
-      @include cel{
-        flex-wrap:wrap
+      @include cel {
+        flex-wrap: wrap;
       }
-      li:first-child{
-          flex: 1 1 10%;
-  
-          img{
-              width: 30%;
-          }
-          @include cel{
-            flex: 1 0 100%;
-            img{
-                width: 20%;
-            }
+      li:first-child {
+        flex: 1 1 10%;
+
+        img {
+          width: 30%;
+        }
+        @include cel {
+          flex: 1 0 100%;
+          img {
+            width: 20%;
           }
         }
-        li {
+      }
+      li {
         flex: 1 1 auto;
         text-align: center;
       }

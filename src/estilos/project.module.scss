@@ -1,6 +1,5 @@
 @import "../estilos/_variables.scss";
 .project {
-  border: solid;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -8,19 +7,100 @@
   z-index: 999;
   background-color: $cafe;
   color: #fff;
-  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  /* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $cafe $dorado;
 }
 
-h1{
-    color: #fff;
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
 }
-.cierrate{
-    display: block;
-    cursor: pointer;
-    padding: .5rem 1rem;
-    color: #fff;
-    position: absolute;
-    right: 0px;
-    top: 0%;
-    border: #fff solid;
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: $dorado;
 }
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: $azul;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: $azul-claro;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: $azul;
+}
+
+
+}
+
+.main {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  align-items: center;
+
+}
+.bandejaPri {
+  padding: 2rem;
+  flex: 1 0 70%;
+}
+.bandeja {
+  padding: 2rem;
+  flex: 1 0 90%;
+}
+.autobandeja {
+  padding: 2rem;
+  flex: 1 0 auto;
+}
+.minibandeja {
+  padding: 2rem;
+  flex: 1 0 40%;
+}
+.galeria {
+  display: flex;
+}
+h1 {
+  color: $dorado;
+}
+h4 {
+  padding-top: 2rem;
+  font-weight: bold;
+  font-size: clamp(2rem, 2vw, 4rem);
+}
+p {
+  padding-bottom: 1rem;
+}
+.cierrate {
+  display: block;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  position: fixed;
+  right: 0px;
+  top: 0%;
+  border: #fff solid;
+}
+
+
+

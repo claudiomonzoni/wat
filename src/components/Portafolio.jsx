@@ -12,6 +12,7 @@ export default function Portafolio() {
   const fetching = async () => {
     const response = await fetch(
       `https://sneakiest-springs.000webhostapp.com/wat/api/content/items/Proyecto`,
+      // `http://localhost/wat/api/content/items/Proyecto`,
       {
         method: "GET",
         headers: {

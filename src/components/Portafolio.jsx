@@ -21,8 +21,9 @@ export default function Portafolio() {
       }
     );
     const proyectoData = await response.json().then((proData) => {
-      setProyectos(proData);
-      console.log(proData)
+      const prodatareverse = proData.reverse()
+      setProyectos(prodatareverse);
+    
     });
   };
 

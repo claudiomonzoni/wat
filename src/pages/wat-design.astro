@@ -10,7 +10,6 @@ const lang = "-101.557641";
   titulo="Servicios wat design"
   descripcion="Servicios de diseño arquitectonico, construcción y asesorías en Zihuatanejo"
 >
-  
   <div id="hero-int">
     <div class="conte">
       <div class="izq">
@@ -51,15 +50,19 @@ const lang = "-101.557641";
             atque?
           </p>
         </div>
-        <form action="#">
-          <input type="text" placeholder="nombre" />
-          <input type="text" placeholder="ciudad" />
-          <input type="email" placeholder="e-mail" />
-          <input type="number" placeholder="teléfono" />
-          <textarea name="mensaje" id="mensaje" placeholder="mensaje"
-          ></textarea>
-          <button type="submit">enviar</button>
-        </form>
+
+        <div class="formu">
+          <form id="forma">
+            <input type="text" id="nombre" placeholder="nombre" />
+            <input type="text" id="ciudad" placeholder="ciudad" />
+            <input type="email" id="email" placeholder="e-mail" />
+            <input type="number" id="tel" placeholder="teléfono" />
+            <textarea name="mensaje" id="msj" placeholder="mensaje"
+            ></textarea>
+            <button id="contactoBtn">enviar</button>
+          </form>
+          <div id="alerta"></div>
+        </div>
       </div>
 
       <div id="logo" class="int">
@@ -85,13 +88,17 @@ const lang = "-101.557641";
         <div id="map">aqui el mapa</div>
         <div class="recuadro-cafe">
           <ul>
-            <li><a href="mailto:hola@watdesign.com">hola@watdesign.com</a></li>
             <li>
-              <a href="#"
-                >Dirección de la oficina, Zihuatanejo Centro, Mex. CP. 40880<</a
+              <a href="mailto:hola@watdesign.com" id="email"
+                >&#9993 hola@watdesign.com</a
               >
             </li>
-            <li><a href="tel:7551073459">755 1073 459</a></li>
+            <li>
+              <a href="#" target="_blank"
+                >Dirección de la oficina, Zihuatanejo Centro, Mex. CP. 40880
+              </a>
+            </li>
+            <li><a href="tel:7551073459"> <b> &#9742; 755 1073 459</b></a></li>
           </ul>
         </div>
       </div>
@@ -135,11 +142,17 @@ const lang = "-101.557641";
       </div>
     </div>
   </div>
-
 </Layout>
 
 <style lang="scss">
   @import "../estilos/_variables.scss";
+
+  #email {
+    @include cel {
+      font-size: 0.7rem;
+    }
+  }
+
   #hero-int > .conte {
     display: flex;
     justify-content: space-evenly;
@@ -269,7 +282,7 @@ const lang = "-101.557641";
     }
   }
   li {
-    list-style: disc;
+    list-style: none;
     padding-top: 1rem;
     &:first-child {
       padding-top: 0;
@@ -300,9 +313,13 @@ const lang = "-101.557641";
       align-items: center;
       @include cel {
         height: 40vh;
-        &:last-child{
-          img{order: 1;}
-          p{order: 2; }
+        &:last-child {
+          img {
+            order: 1;
+          }
+          p {
+            order: 2;
+          }
         }
       }
       .conte {
@@ -347,10 +364,9 @@ const lang = "-101.557641";
     fillOpacity: 0.5,
     radius: 20,
   }).addTo(map);
-
 </script>
 <script>
-   import gsap from "gsap";
+  import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
 
@@ -359,13 +375,12 @@ const lang = "-101.557641";
 
   tl.from(" .init > .ref", {
     stagger: {
-      amount: .2,
+      amount: 0.2,
     },
     y: 100,
     opacity: 0,
     ease: "Power1.easeOut",
   });
-
 
   tl.from(".der", {
     y: "50",
@@ -394,6 +409,46 @@ const lang = "-101.557641";
       opacity: 0,
       scale: 0.9,
       y: "+=20",
+    });
+  });
+  import $ from "jquery";
+
+  $(function () {
+    $("#contactoBtn").on("click", function (e) {
+      var nombre = $("#nombre").val();
+      var ciudad = $("#ciudad").val();
+      var email = $("#email").val();
+      var tel = $("#tel").val();
+      var msj = $("#msj").val();
+
+      $("#msj").empty(); // To empty previous error/success message.
+      // Checking for blank fields.
+
+      if (nombre == "" || ciudad == "" || email == "" || msj == "") {
+        alert("Por favor llena todos los campos");
+      } else {
+        $.post(
+          "/contacto.php",
+          {
+            nombre1: nombre,
+            ciudad1: ciudad,
+            email1: email,
+            tel1: tel,
+            msj1: msj,
+          },
+          function (data) {
+            $("#alerta").append(data); // Append returned message to message paragraph.
+            $("#forma")[0].reset(); // To reset form fields on success.
+            if (
+              data ==
+              "Gracias por contáctarnos, pronto nos pondremos en contacto contigo"
+            ) {
+            }
+          }
+        );
+      }
+
+      e.preventDefault();
     });
   });
 </script>

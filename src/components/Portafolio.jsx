@@ -11,12 +11,14 @@ export default function Portafolio() {
   const [proyectos, setProyectos] = useState([]);
   const fetching = async () => {
     const response = await fetch(
-      `https://sneakiest-springs.000webhostapp.com/wat/api/content/items/Proyecto`,
+      `http://cmn.ct.ws/wat/api/content/items/Proyecto`,
       // `http://localhost/wat/api/content/items/Proyecto`,
       {
         method: "GET",
+        mode : 'no-cors',  
         headers: {
           "api-key": "USR-42334a42d493e827a86a88fd05e0af3e1d9eb2b1",
+          
         },
       }
     );
